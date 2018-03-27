@@ -50,17 +50,38 @@ public class MainActivity extends AppCompatActivity {
             slider.setDuration(4000);//间隔时间
         }
         //初始化菜单栏
-        mTab.addTab(mTab.newTab().setText("推荐"), 0);
-        mTab.addTab(mTab.newTab().setText("热点"), 1);
-        mTab.addTab(mTab.newTab().setText("其他"), 2);
+        mTab.addTab(mTab.newTab().setText("新闻"), 0);
+        mTab.addTab(mTab.newTab().setText("娱乐"), 1);
+        mTab.addTab(mTab.newTab().setText("社会"), 2);
 
-        //初始化列表
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < 100; i++) {//通过for循环进行数据的添加
-            builder.append("data" + i + "\n");
+        int position = mTab.getSelectedTabPosition();//根据所选的tab设置数据
+        if (position==0){
+            //初始化列表
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < 100; i++) {//通过for循环进行数据的添加
+                builder.append("data" + i + "\n");
+            }
+            String str = builder.toString();
+            mTv.setText(str);//将上述数据添加到tv上
+        }else if (position==1){
+            //初始化列表
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < 50; i++) {//通过for循环进行数据的添加
+                builder.append("data" + i + "\n");
+            }
+            String str = builder.toString();
+            mTv.setText(str);//将上述数据添加到tv上
+        }else if (position==3){
+            //初始化列表
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < 10; i++) {//通过for循环进行数据的添加
+                builder.append("data" + i + "\n");
+            }
+            String str = builder.toString();
+            mTv.setText(str);//将上述数据添加到tv上
         }
-        String str = builder.toString();
-        mTv.setText(str);//将上述数据添加到tv上
+
+
     }
 
     private void initView() {
